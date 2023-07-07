@@ -62,7 +62,7 @@ MIDDLEWARE = [
     ]
 
 ROOT_URLCONF = 'config.urls'
-CSRF_TRUSTED_ORIGINS = [    'https://m10hediyye.com/',    'http://m10hediyye.com/',"https://instagram.com"]
+CSRF_TRUSTED_ORIGINS = [    'https://m10lotoreya.com/',    'http://m10lotoreya.com/',"https://instagram.com"]
 
 
 TEMPLATES = [
@@ -133,13 +133,12 @@ STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 
   
-STATIC_ROOT = '/home/m10hediyye.com/public_html/Sonhazrirliq/mon/static/'
+STATIC_ROOT = '/home/m10lotoreya.com/public_html/Sonhazrirliq/mon/static/'
 
 
   
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-# Default primary key field type
-# https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
+
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'

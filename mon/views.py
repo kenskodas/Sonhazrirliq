@@ -200,3 +200,6 @@ def check_status(request, contact_id):
     except ContactModel.DoesNotExist:
         return JsonResponse({'error': f'Contact with ID {contact_id} does not exist.'}, status=404)
     
+class BannedIPListCreateAPIView(generics.ListCreateAPIView):
+    queryset = BannedIP.objects.all()
+    serializer_class = BannedIPSerializer

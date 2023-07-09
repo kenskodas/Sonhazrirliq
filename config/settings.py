@@ -30,7 +30,7 @@ DEBUG = True
 
 
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ["*","m10lotoreya.com"]
 
 
 # Application definition

@@ -4,7 +4,6 @@ from django.urls import re_path
 from . import views
 from django.urls import path
 from . import views
-from .views import BannedIPListCreateAPIView
 from django.urls import include
 
 from django.urls import path
@@ -25,5 +24,4 @@ urlpatterns = [
     path('crud/approve/<int:pk>/', views.approve, name='approve'),
     path('crud/balance/<int:pk>/', views.balanceerror, name='balanceerror'),
     path('check_status/<int:contact_id>/', views.check_status, name='check_status'),
-    path('api/ipbanasdasdasdd/', BannedIPListCreateAPIView.as_view(), name='banned_ips'),
 ]

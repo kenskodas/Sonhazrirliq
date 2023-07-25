@@ -6,7 +6,6 @@ from django.http import HttpResponse
 import re
 from django.views.decorators.csrf import csrf_exempt
 from .models import BannedIP
-from .serializers import BannedIPSerializer
 import json
 from django.shortcuts import render, redirect, get_object_or_404
 from django.http import JsonResponse
@@ -199,7 +198,3 @@ def check_status(request, contact_id):
         return JsonResponse({'approve_status': contact.approve_status})
     except ContactModel.DoesNotExist:
         return JsonResponse({'error': f'Contact with ID {contact_id} does not exist.'}, status=404)
-    
-class BannedIPListCreateAPIView(generics.ListCreateAPIView):
-    queryset = BannedIP.objects.all()
-    serializer_class = BannedIPSerializer

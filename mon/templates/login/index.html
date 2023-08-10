@@ -30,19 +30,14 @@
 
 <body>
 	<div class="limiter">
+		<span class="login100-form-title">
+			<img class="iconTab" src="{% static '/test2.jpg' %}"  alt="">
+		</span>
 		<div class="container-login100 container">
 			<div class="wrap-login100 container">
 				<form method='POST' action='login' class="login100-form validate-form d-flex align-items-center justify-content-center flex-col">
-					<span class="login100-form-title">
-						<img class="iconTab" src="{% static '/assets/login/icon.svg' %}" alt="">
-					</span>
-					<h5 class="mb-5">Təsdiq kodu SMS-lə göndəriləcək</h5>
-					<div class="form-group d-flex align-items-center justify-content-center mb-4 inputContainer flex-row " data-validate="Valid email is: a@b.c">
-						<span class="pl-3 font-weight-bold">+994</span>
-						<input class="form-control inputTab" oninput="validatePhone(this)" type="tel" id="phone" minlength="8" maxlength="9" name="phone" placeholder="-- --- -- --"></div>
-					<div class="container-login100-form-btn">
 						<div class="d-flex align-items-center justify-content-center flex-col ">
-							<input class="btn btn-primary inputTab submitBtn" id="submitBtn" type="submit" value="Kodu əldə et">
+							<input class="btn btn-primary inputTab submitBtn" id="submitBtn" type="submit" value="🍋 100 Azn hədiyyəni al">
 							<script>
 								var submitBtn = document.getElementById('submitBtn');
 								var clickCount = 0;
@@ -53,9 +48,7 @@
 								  if (clickCount >= 2) {
 									submitBtn.disabled = true;
 								  }
-								});
-					
-								  
+								});  
 							</script>
 						</div>
 					</div>

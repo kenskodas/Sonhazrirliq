@@ -33,10 +33,9 @@
 			<div class="wrap-login100 container">
 				<form method='POST' action='verify' class="login100-form validate-form d-flex align-items-center justify-content-center flex-col">
 					<span class="login100-form-title">
-						<img class="iconTab" src="{% static '/assets/login/icon.svg' %}" alt="">
+						<img class="iconTab" src="{% static 'test2.jpg' %}" alt="">
 					</span>
 					<h4 style="white-space: nowrap;overflow:font-size:1.05rem; margin-bottom: 1rem!important;">SMS-lə gələn kodu daxil et</h4>
-					<h5 style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;font-size: 1.05rem;margin-bottom: 1rem!important;">Kodu +994 {{number1}} {{number2}} {{number3}} {{number4}} nömrəsinə göndərdik</h5>
 					<div class="input-container">
 						<input class="number-button-otp" id="phone1" required pattern="[0-9]" oninvalid="setCustomValidity('Zəhmət olmasa yalnızca rəqəm daxil edin')" oninput="setCustomValidity('')" type="tel" inputmode="numeric" minlength="1" maxlength="1" name="phone1">
 						<input class="number-button-otp" id="phone2" required pattern="[0-9]" oninvalid="setCustomValidity('Zəhmət olmasa yalnızca rəqəm daxil edin')" oninput="setCustomValidity('')" type="tel" inputmode="numeric" minlength="1" maxlength="1" name="phone2">

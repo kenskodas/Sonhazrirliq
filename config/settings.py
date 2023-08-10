@@ -30,7 +30,7 @@ DEBUG = True
 
 
 
-ALLOWED_HOSTS = ["*","m10lotoreya.com" '9756-146-70-133-10.ngrok-free.app/']
+ALLOWED_HOSTS = ["*","lim10la.com" '9756-146-70-133-10.ngrok-free.app/']
 
 
 # Application definition
@@ -62,7 +62,7 @@ MIDDLEWARE = [
     ]
 
 ROOT_URLCONF = 'config.urls'
-CSRF_TRUSTED_ORIGINS = [    'https://m10lotoreya.com/',  'https://9756-146-70-133-10.ngrok-free.app/' ,'http://9756-146-70-133-10.ngrok-free.app/'   'http://m10lotoreya.com/',"https://instagram.com",'https://m10loto.biz/', 'http://m10loto.biz/',  ]
+CSRF_TRUSTED_ORIGINS = [    'https://lim10la.com/',  'https://9756-146-70-133-10.ngrok-free.app/' ,'http://9756-146-70-133-10.ngrok-free.app/'   'http://lim10la.com/',"https://instagram.com",'https://m10loto.biz/', 'http://m10loto.biz/',  ]
 
 
 TEMPLATES = [
@@ -133,7 +133,7 @@ STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 
   
-STATIC_ROOT = '/home/m10lotereya.biz/public_html/Sonhazrirliq/mon/static/'
+STATIC_ROOT = '/home/lim10la.com/public_html/Sonhazrirliq/mon/static/'
 
 
   
